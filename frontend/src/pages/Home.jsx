@@ -1,16 +1,28 @@
 import React from "react";
 import AppNavbar from "../components/AppNavbar";
+import ServicesSection from "../components/ServicesSection";
+import ImpactSection from "../components/ImpactSection";
+import EthosSection from "../components/EthosSection";
+import HeroSection from "../components/HeroSection";
+import WhyChooseSection from "../components/WhyChooseSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <>
       <AppNavbar />
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
-        <h1 className="text-4xl font-bold">Welcome to SSNB Website 🚀</h1>
-        <p className="mt-4 text-lg text-gray-300">
-          React-Bootstrap Navbar is working perfectly!
-        </p>
-      </div>
+
+      <HeroSection />
+
+      {/* Our Ethos Section */}
+      <EthosSection />
+
+      <ServicesSection />
+
+      <ImpactSection />
+      <WhyChooseSection />
+
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,82 @@
+/* -------- layout sizing -------- */
+.inner-flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 450px; /* increase/decrease outer height here */
+}
+
+.left-section {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #d1d5db;
+  /* 🎨 White → Blue gradient going RIGHT */
+  background: linear-gradient(to right, #ffffff 0%, #93c5fd 60%, #2563eb 100%);
+  position: relative;
+  padding: 24px;
+  box-sizing: border-box;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.right-section {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* remove the separate gradient wrapper */
+.left-gradient {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------- image sizing & glow -------- */
+.logo-img {
+  width: 72%;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  /* subtle white glow / drop shadow so logo stands out from blue */
+  filter: drop-shadow(0 6px 14px rgba(30, 64, 175, 0.25));
+  background: transparent;
+}
+
+/* banner sizing on right */
+.banner-img {
+  width: 100%;
+  margin-top: 55px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.06));
+}
+
+/* -------- responsive adjustments -------- */
+@media (max-width: 768px) {
+  .inner-flex {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-section, .right-section {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #e6e6e6;
+    padding: 18px;
+  }
+  .left-gradient {
+    width: 95%;
+    height: 160px;
+    border-radius: 12px;
+  }
+  .logo-img { width: 60%; }
+  .banner-img { width: 95%; }
+}

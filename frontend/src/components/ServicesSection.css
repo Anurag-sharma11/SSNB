@@ -1,0 +1,101 @@
+/* ====== Base Section ====== */
+.services-section {
+  padding: 100px 60px;
+  background: #f8fdff;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.4rem;
+  color: #0284c7; /* calm healthcare blue */
+  font-weight: 700;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+/* ====== Grid Layout ====== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====== Card Design ====== */
+.service-card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.12);
+  border: 1px solid rgba(0, 136, 204, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.service-icon {
+  background: radial-gradient(circle at top left, #e0f7fa, #b3e5fc);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 136, 204, 0.15);
+  transition: transform 0.3s ease;
+  color: #0284c7;
+}
+
+.service-name {
+  font-size: 1.05rem;
+  color: #0f172a;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* ====== Hover Effects ====== */
+.service-card:hover {
+  transform: scale(1.07) rotateX(8deg) rotateY(-6deg);
+  box-shadow: 0 20px 45px rgba(2, 132, 199, 0.25);
+  border-color: rgba(2, 132, 199, 0.2);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.15) rotateZ(5deg);
+  background: radial-gradient(circle at bottom right, #bae6fd, #7dd3fc);
+}
+
+.service-card:hover .service-name {
+  color: #0284c7;
+}
+
+/* ====== Responsiveness ====== */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-card {
+    width: 90%;
+    height: 220px;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+}

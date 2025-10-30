@@ -1,0 +1,126 @@
+.footer {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+  color: white;
+  padding-top: 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+/* Left Section */
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+.footer-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+.footer-tagline {
+  font-size: 0.95rem;
+  color: #e0f2fe;
+  line-height: 1.5;
+}
+
+/* Center Section */
+.footer-center {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-center h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #f0f9ff;
+}
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-center li {
+  margin-bottom: 8px;
+}
+.footer-center a {
+  color: #e0f2fe;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-center a:hover {
+  color: #fff;
+}
+
+/* Right Section */
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+.footer-right h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #f0f9ff;
+}
+.footer-right p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e0f2fe;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+.footer-socials a {
+  background: #f0f9ff;
+  color: #0284c7;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.footer-socials a:hover {
+  background: #bae6fd;
+  transform: translateY(-3px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  padding: 18px 0;
+  background: #0369a1;
+  color: #e0f2fe;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: 100%;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+}
