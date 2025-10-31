@@ -31,7 +31,7 @@ const Footer = () => {
         {/* Right Section */}
         <div className="footer-right">
           <h3>Contact Us</h3>
-          <p><Phone size={16} /> +91 98765 43210</p>
+          <p><Phone size={16} /> +91 78935929812</p>
           <p><Mail size={16} /> info@sevasainursing.com</p>
           <p><MapPin size={16} /> Delhi, India</p>
 

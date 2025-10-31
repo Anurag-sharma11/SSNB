@@ -1,0 +1,89 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #f4f8fb; /* soft hospital light-blue tone */
+  color: #1e293b; /* darker text for contrast */
+  padding: 60px 80px;
+  gap: 40px;
+}
+
+/* Left side (Text) */
+.about-content {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #2563eb; /* calm medical blue */
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #334155; /* readable dark gray-blue */
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #1d4ed8; /* deep blue highlight */
+  font-weight: 600;
+}
+
+.learn-btn {
+  background-color: #2563eb; /* blue button */
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-btn:hover {
+  background-color: #1e40af; /* darker blue hover */
+  transform: translateY(-2px);
+}
+
+/* Right side (Logo) */
+.about-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3); /* soft blue glow */
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 250px;
+    margin-top: 30px;
+  }
+}
