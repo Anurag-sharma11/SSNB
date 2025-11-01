@@ -22,7 +22,7 @@ const EthosSection = () => {
   ];
 
   return (
-    <section className="ethos-section">
+    <section className="ethos-section" id="ethos">
       <div className="ethos-container">
         <h2 className="ethos-title">Our Ethos</h2>
         <p className="ethos-subtext">

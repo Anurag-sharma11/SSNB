@@ -1,18 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Contacts from "./pages/Contacts";
 import FAQ from "./components/FAQ";
 import FormPage from "./components/FormPage";
+import Gallery from "./pages/Gallery";
+import Services from "./pages/Services";
+
+
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} /> {/* ✅ Route added */}
-        <Route path="/contact" element={<Contact />} />
+        
         <Route path="/" element={<FAQ />} />
         <Route path="/form" element={<FormPage />} />
+        <Route path="/gallery" element={<Gallery />} /> {/* ✅ Route added */}
+        <Route path="/services" element={<Services />} /> {/* ✅ Route added */}
+        <Route path="/contact" element={<Contacts />} />
       </Routes>
     </Router>
   );

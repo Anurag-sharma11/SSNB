@@ -2,6 +2,7 @@
   background: linear-gradient(135deg, #eef6ff 0%, #ffffff 100%);
   padding: 100px 40px;
   overflow: hidden;
+  margin-top: 60px;
 }
 
 /* ---------- HERO CONTENT ---------- */
@@ -85,19 +86,35 @@
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  right: 60px;
+  right: 20px;
 }
 
-.hero-image img {
-  width: 380px;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
 
+/*
 .hero-image img:hover {
   transform: scale(1.05);
 }
+*/
+
+.hero-image img {
+  width: 450px;
+  height: auto;
+  object-fit: contain;
+  animation: zoomPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08); /* adjust intensity */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /* ---------- INTRO ANIMATION ---------- */
 .logo-intro {

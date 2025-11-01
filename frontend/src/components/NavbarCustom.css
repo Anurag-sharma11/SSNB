@@ -1,0 +1,138 @@
+/* ---------------- MAIN NAVBAR ---------------- */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+/* ---------------- LOGO ---------------- */
+.logo-style {
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 85, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.logo-style:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------- BRAND AREA ---------------- */
+.navbar-brand {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* brand-title styling */
+.navbar-brand .brand-title {
+  font-family: "Monoton", cursive !important;
+  font-size: 1.2rem; /* ✅ large & visible */
+  text-transform: uppercase;
+  color: #592606;
+  letter-spacing: 3px;
+  line-height: 1;
+  text-shadow:
+    0 0 4px rgba(46, 68, 75, 0.6),
+    0 0 10px rgba(64, 73, 76, 0.4),
+    0 0 20px rgba(0, 188, 255, 0.2);
+  transition: all 0.3s ease;
+  /* ✅ Add vertical stretching */
+  transform: scaleY(1.6);  /* makes text taller */
+  transform-origin: center; /* stretch from bottom, not center */
+ 
+}
+
+/* glow hover */
+.navbar-brand .brand-title:hover {
+  transform: scale(1.06);
+  text-shadow:
+    0 0 8px rgba(0, 255, 255, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+/* ---------------- NAV LINKS ---------------- */
+.nav-link-custom {
+  color: #1e3a5f !important;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-left: 12px;
+}
+
+.nav-link-custom:hover {
+  color: #007bff !important;
+  transform: translateY(-1px);
+}
+
+/* ---------------- TOGGLER ---------------- */
+.navbar-toggler {
+  border-color: #00bcd4 !important;
+}
+
+/* ---------------- DROPDOWN ---------------- */
+.navbar-nav .dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #e8f1ff;
+}
+
+/* ---------------- RESPONSIVE FIX ---------------- */
+@media (max-width: 991px) {
+  .navbar-brand .brand-title {
+    font-size: 2rem; /* slightly smaller for tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand .brand-title {
+    font-size: 1.6rem; /* readable size for phones */
+    letter-spacing: 2px;
+  }
+
+  .logo-style {
+    width: 60px;
+    height: auto;
+  }
+}
+
+/* 🔽 Search Suggestions Dropdown */
+.suggestion-box {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #cfd9e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1500;
+  list-style: none;
+  padding: 6px 0;
+  margin: 5px 0 0 0;
+  overflow: hidden;
+}
+
+.suggestion-box li {
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.suggestion-box li:hover {
+  background: #e8f3ff;
+  color: #007bff;
+}
+section.highlighted {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+  transition: box-shadow 1s ease-out;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 import logo from "../assets/Logo.png";
 import ologo from "../assets/PNGL.JPG"
+import CFLOGO from "../assets/FLOGO.jpg";
 
 const HeroSection = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -41,7 +42,7 @@ const HeroSection = () => {
           </div>
 
           <div className="hero-image">
-            <img src={logo} alt="Nursing care" />
+            <img src={CFLOGO} alt="Nursing care" />
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ import { MapPin, Timer, HeartPulse, Wallet, CheckCircle2, Users } from "lucide-r
 
 const SevaSaiAdvantage = () => {
   return (
-    <section className="advantage-section">
+    <section className="advantage-section" >
       <div className="advantage-header">
         <h2>
           Why <span>Seva Sai Nursing Bureau</span> is Trusted Across India

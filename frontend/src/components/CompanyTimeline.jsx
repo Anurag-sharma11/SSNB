@@ -1,12 +1,80 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./CompanyTimeline.css";
 
 export default function CompanyTimeline() {
+  const timelineRef = useRef(null);
+
+  useEffect(() => {
+    const el = timelineRef.current;
+    if (!el) return;
+
+    function onScroll() {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // --- Step 1: define start & end points for animation ---
+      // when timeline top touches bottom of screen -> start
+      const start = rect.top - windowHeight;
+      // when timeline bottom reaches top of screen -> end
+      const end = rect.bottom;
+
+      // --- Step 2: calculate progress between 0 and 1 ---
+      const scrollY = window.scrollY;
+      const percent = Math.min(Math.max((scrollY - (scrollY + start)) / (end - start), 0), 1);
+
+      // Actually simpler: based on element position relative to viewport
+      const visibleDistance = windowHeight - rect.top; // how much of timeline has entered view
+      const totalScrollable = rect.height + windowHeight; // total distance for animation
+      let progress = visibleDistance / totalScrollable;
+
+      // Clamp between 0 and 1
+      progress = Math.max(0, Math.min(progress, 1));
+
+      // --- Step 3: slow down the fill ---
+      // This is the key: power < 1 = faster, power > 1 = slower.
+      const eased = Math.pow(progress, 0.7); // super slow fill (try 3–4 range)
+
+      // --- Step 4: apply CSS variables ---
+      el.style.setProperty("--line-fill", `${(eased * 100).toFixed(2)}%`);
+      el.style.setProperty("--line-glow-opacity", `${0.2 + eased * 0.8}`);
+
+      // --- Step 5: activate dots when line reaches them ---
+      const items = el.querySelectorAll(".timeline-item");
+      const filledHeight = eased * rect.height;
+
+      items.forEach((item) => {
+        const itemRect = item.getBoundingClientRect();
+        const itemCenter = itemRect.top + itemRect.height / 2 - rect.top;
+
+        if (itemCenter <= filledHeight) {
+  item.classList.add("active", "glow-card");
+} else {
+  item.classList.remove("active", "glow-card");
+}
+
+      });
+    }
+
+    // Initial trigger
+    onScroll();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   return (
     <section className="company-timeline">
       <h2 className="timeline-title">Our Journey</h2>
 
-      <div className="timeline">
+      <div
+        className="timeline"
+        ref={timelineRef}
+        style={{ "--line-fill": "0%", "--line-glow-opacity": "0.25" }}
+      >
         <div className="timeline-item left">
           <div className="content">
             <h3>2015 — Foundation</h3>

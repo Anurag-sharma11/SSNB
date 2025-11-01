@@ -1,0 +1,10 @@
+.planet-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, #000814 0%, #000000 80%);
+  overflow: hidden;
+}

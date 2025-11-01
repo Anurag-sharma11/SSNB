@@ -1,0 +1,93 @@
+/* --- Section Layout --- */
+.service-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f3f8ff, #ffffff);
+}
+
+.service-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -50px;
+}
+
+/* --- Heading --- */
+.service-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1b3a6a;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.service-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #007bff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* --- Grid Layout --- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* --- Card Styling --- */
+.service-card {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Icon --- */
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* --- Title --- */
+.service-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+/* --- Tagline --- */
+.service-tagline {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .service-heading {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+}

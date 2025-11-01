@@ -39,7 +39,7 @@ const ImpactSection = () => {
   }, []);
 
   return (
-    <section className="impact-section">
+    <section className="impact-section" id="impact">
       <h2 className="impact-title">OUR IMPACT IN NUMBERS</h2>
       <p className="impact-subtitle">
         A reflection of our commitment to care, compassion, and quality service.

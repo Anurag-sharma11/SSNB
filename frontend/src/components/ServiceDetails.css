@@ -1,0 +1,130 @@
+.service-details-section {
+  position: relative;
+  width: 100%;                 /* ✅ normal full width */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  color: white;
+  z-index: 0;
+}
+
+
+
+/* Overlay for darkness and herbal vibe */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(230, 240, 255, 0.75),
+    rgba(215, 230, 245, 0.55)
+  );
+  backdrop-filter: blur(8px) saturate(120%);
+  z-index: 1;
+}
+
+
+
+/* Main container */
+.details-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;  /* ✅ increased overall container width */
+  padding: 80px 60px; /* ✅ more breathing space */
+  width: 100%;
+  gap: 60px;          /* ✅ increased gap between text and image */
+}
+
+
+/* Glassy text box */
+.details-text-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.55); /* a bit more opaque */
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #1a2e40; /* darker text */
+}
+
+.details-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #005b99; /* health-theme deep blue */
+  margin-bottom: 20px;
+}
+
+.details-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #1b2936; /* readable dark grey-blue */
+  margin-bottom: 20px;
+}
+
+.details-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 25px 0;
+}
+
+.details-list li {
+  margin: 6px 0;
+  color: #00796b; /* medical teal tone */
+  font-weight: 600;
+}
+
+.details-quote {
+  font-style: italic;
+  color: #005b99; /* blue highlight */
+  opacity: 0.9;
+  border-left: 4px solid #66bb6a; /* subtle green line */
+  padding-left: 15px;
+}
+
+/* Right Image Section */
+.details-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.details-image {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.25);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-image-container:hover .details-image {
+  box-shadow: 0 20px 40px rgba(0, 120, 255, 0.4);
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .details-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .details-image {
+    transform: rotateY(0deg);
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,165 @@
+body {
+  background: linear-gradient(180deg, #f8fdff 0%, #e6f9f3 100%);
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.parallax-wall-container {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.parallax-title {
+  font-size: 2.5rem;
+  color: #009688;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 6px rgba(0, 150, 136, 0.2);
+}
+
+.parallax-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ---------- Image Card ---------- */
+.parallax-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: transparent; /* remove blue background */
+  box-shadow: none; /* cleaner look */
+}
+
+.parallax-image {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: transparent;
+}
+
+/* Image hidden initially and transition with delay */
+.parallax-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scaleY(0.02);
+  transform-origin: center center;
+  /* transition includes a delay so it starts AFTER the beam animation */
+  transition: transform 1.6s ease-in-out 1.4s, opacity 1.2s ease 1.6s;
+}
+
+/* Reveal: image will actually animate after the transition-delay above */
+.parallax-image.reveal img {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* --- Glowing Beam (longer hold and stronger glow) --- */
+.parallax-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  height: 12px;
+  background: linear-gradient(
+  90deg,
+  #c61dc6,  /* blue edge glow left */
+  #ff33cc,  /* pink center */
+  #ff33cc,  /* pink center */
+  #b123a8   /* blue edge glow right */
+);
+
+  border-radius: 50px;
+  box-shadow:
+  0 0 25px #ff33cc,
+  0 0 60px #a85aa0,
+  0 0 120px rgba(0, 170, 255, 0.8);
+
+  transform: translate(-50%, -50%) scaleX(0);
+  opacity: 0;
+  filter: blur(0.8px);
+}
+
+
+/* longer animation so beam appears, holds ~1.5-2s, then fades */
+.parallax-image.reveal::before {
+  animation: glowingBeamHold 1s ease-in-out forwards;
+}
+
+@keyframes glowingBeamHold {
+  0% {
+    transform: translate(-50%, -50%) scaleX(0);
+    opacity: 0;
+    filter: blur(0.8px);
+  }
+  15% {
+    transform: translate(-50%, -50%) scaleX(1);
+    opacity: 1;
+    filter: blur(1px);
+  }
+  40% {
+    transform: translate(-50%, -50%) scaleX(1);
+    opacity: 1;
+    box-shadow:
+      0 0 35px rgba(255,255,255,0.95),
+      0 0 80px #00fff0,
+      0 0 160px rgba(0, 230, 255, 0.95);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleX(1);
+    opacity: 0;
+  }
+}
+
+
+
+/* Soft outer glow when image fully appears */
+.parallax-image.reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(0, 200, 180, 0.3);
+  animation: fadeGlow 1.5s ease-in-out 2s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeGlow {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Responsive Grid ---------- */
+@media (max-width: 1024px) {
+  .parallax-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .parallax-image {
+    height: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .parallax-grid {
+    grid-template-columns: 1fr;
+  }
+  .parallax-image {
+    height: 300px;
+  }
+}

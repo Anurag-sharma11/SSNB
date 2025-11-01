@@ -118,3 +118,83 @@
     left: 15px;
   }
 }
+
+/* ---------- 3D Glowing Scroll Line ---------- */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Base line (pale background) */
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  background-color: rgba(147, 197, 253, 0.20); /* faint blue base */
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* Glowing "fill" line (dynamic height) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px; /* a touch wider for glow */
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+  height: var(--line-fill, 0%); /* controlled by JS */
+  background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+  filter: blur(0.6px);
+  box-shadow: 0 0 20px rgba(37, 99, 235, calc(var(--line-glow-opacity, 0.25)));
+  border-radius: 10px;
+  transform-origin: top;
+  transition: height 160ms linear, box-shadow 200ms linear;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -9px;
+  background-color: #cbe6ff; /* dim color by default */
+  border: 4px solid #ffffff;
+  top: 30px;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.12);
+  transition: transform 250ms ease, box-shadow 250ms ease, background-color 200ms;
+}
+
+/* right side dot */
+.timeline-item.right::before {
+  left: -9px;
+  right: auto;
+}
+
+/* when active (line has reached this item) */
+.timeline-item.active::before {
+  background-color: #2563eb;
+  box-shadow: 0 0 22px rgba(37, 99, 235, 0.9), inset 0 0 6px rgba(255,255,255,0.6);
+  transform: scale(1.15);
+}
+
+/* ---------- Card Glow + Zoom Animation ---------- */
+.timeline-item.glow-card .content {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.35),
+              0 0 60px rgba(147, 197, 253, 0.25);
+  transition: all 0.5s ease;
+}
+
+.timeline-item .content {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
