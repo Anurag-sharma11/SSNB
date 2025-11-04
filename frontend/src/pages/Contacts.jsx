@@ -1,6 +1,8 @@
 // src/pages/Contact.jsx
 import React, { useState } from "react";
 import "./Contacts.css";
+import ETH from "../assets/ETH.mp4";
+import ContactNavbar from "../components/ContactNavbar";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,40 +17,76 @@ export default function Contact() {
 
   // 🧠 Handle input change
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // 🚀 Handle form submit
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
+  if (status) setStatus(""); // clear status on typing
+};
 
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
 
-      const data = await res.json();
-      if (data.success) {
-        setStatus("✅ Message sent successfully!");
-        setFormData({ name: "", contact: "", location: "", email: "", message: "" });
-      } else {
-        setStatus("⚠️ Failed to send message. Try again.");
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus("❌ Server error. Please try later.");
+ // 🚀 Handle form submit
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // --- 🧩 Validation checks ---
+  const nameRegex = /^[A-Za-z\s]{3,}$/;
+  const phoneRegex = /^[0-9]{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!nameRegex.test(formData.name)) {
+    setStatus("⚠️ Please enter a valid name (letters only, min 3 chars).");
+    return;
+  }
+  if (!phoneRegex.test(formData.contact)) {
+    setStatus("⚠️ Please enter a valid 10-digit contact number.");
+    return;
+  }
+  if (formData.location.trim().length < 3) {
+    setStatus("⚠️ Please enter a valid location (min 3 characters).");
+    return;
+  }
+  if (!emailRegex.test(formData.email)) {
+    setStatus("⚠️ Please enter a valid email address.");
+    return;
+  }
+  
+
+  // --- 📨 Proceed if valid ---
+  setStatus("Sending...");
+
+  try {
+    const res = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      setStatus("✅ Message Sent! Our team will contact you as soon as possible.");
+      setFormData({ name: "", contact: "", location: "", email: "", message: "" });
+
+      // Clear status after few seconds
+      setTimeout(() => setStatus(""), 4000);
+    } else {
+      setStatus("⚠️ Failed to send message. Please try again later.");
     }
-  };
+  } catch (error) {
+    console.error(error);
+    setStatus("❌ Server error. Please try later.");
+  }
+};
+
 
   return (
+    <>
+    <ContactNavbar />
+
     <div className="contact-page">
       {/* 🌍 Background video */}
       <video autoPlay loop muted playsInline className="background-video">
-        <source src="/videos/kk.mp4" type="video/mp4" />
-      </video>
+  <source src={ETH} type="video/mp4" />
+</video>
+
 
       {/* 🧊 Contact form */}
       <div className="contact-container">
@@ -101,5 +139,6 @@ export default function Contact() {
         {status && <p className="status">{status}</p>}
       </div>
     </div>
+    </>
   );
 }

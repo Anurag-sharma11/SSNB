@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 import logo from "../assets/Logo.png";
-import ologo from "../assets/PNGL.JPG"
+import ologo from "../assets/PNGL.JPG";
 import CFLOGO from "../assets/FLOGO.jpg";
+import BookNurseModal from "../components/BookNurseModal"; // ✅ import modal
 
 const HeroSection = () => {
   const [showIntro, setShowIntro] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Remove intro after animation (2.5s)
     const timer = setTimeout(() => setShowIntro(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {/* 🔹 Intro Overlay */}
       {showIntro && (
         <div className="logo-intro">
           <div className="logo-glass">
@@ -24,7 +24,6 @@ const HeroSection = () => {
         </div>
       )}
 
-      {/* 🔹 Hero Section */}
       <section className="hero">
         <div className="hero-content">
           <div className="hero-text">
@@ -36,7 +35,12 @@ const HeroSection = () => {
               your home — combining medical expertise with compassion and trust.
             </p>
             <div className="hero-buttons">
-              <button className="btn primary">Book a Nurse</button>
+              <button
+                className="btn primary"
+                onClick={() => setShowModal(true)}
+              >
+                Book a Nurse
+              </button>
               <button className="btn secondary">Learn More</button>
             </div>
           </div>
@@ -46,6 +50,9 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      <BookNurseModal show={showModal} onClose={() => setShowModal(false)} />
     </>
   );
 };

@@ -1,0 +1,131 @@
+/* Overlay background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 30, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 140, 255, 0.4);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  width: 400px;
+  color: #1a1a1a; 
+  position: relative;
+  animation: popIn 0.3s ease;
+  box-shadow: 0 0 25px rgba(0, 140, 255, 0.25);
+}
+
+/* Header text */
+.modal-container h2 {
+  color: #003366; /* rich medical navy */
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 8px rgba(0, 90, 200, 0.2);
+  margin-bottom: 0.6rem;
+}
+
+
+
+.modal-container p {
+  font-size: 1rem;
+  color: #1a1a1a; /* dark grey for clear contrast */
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin-bottom: 1.2rem;
+}
+
+
+/* Buttons */
+.modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Different styles */
+.modal-btn.phone {
+  background: #007bff;
+  color: white;
+}
+
+.modal-btn.form {
+  background: #ffffff;
+  color: #007bff;
+}
+
+.modal-btn.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.modal-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #ffffffcc;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

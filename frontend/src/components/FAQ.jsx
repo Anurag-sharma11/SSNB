@@ -79,7 +79,7 @@ const FAQ = () => {
                     </p>
                     <button
                       className="faq-form-btn"
-                      onClick={() => navigate("/form")}
+                      onClick={() => navigate("/contact")}
                     >
                       Fill Out Form
                     </button>
