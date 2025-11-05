@@ -29,17 +29,18 @@ const services = [
     tagline: "Trained nursing staff available for personalized home care",
   },
   {
-    id: "tracheostomy-care",
-    title: "Tracheostomy Care",
-    icon: "💨",
-    tagline: "Expert tracheostomy management with sterile technique",
-  },
-  {
-    id: "gastrostomy-care",
-    title: "Gastrostomy Care",
-    icon: "💉",
-    tagline: "Feeding tube care and maintenance by medical staff",
-  },
+  id: "paralytic-fracture-care",
+  title: "Paralytic & Fracture Patient Care",
+  icon: "🦽",
+  tagline: "Specialized nursing for paralysis and bone injury recovery",
+},
+{
+  id: "wound-dressing",
+  title: "Wound Dressing & Medical Assistance",
+  icon: "🩹",
+  tagline: "Sterile dressing, wound care, and medical support at home",
+},
+
   {
     id: "injection-on-call",
     title: "Injection On Call",

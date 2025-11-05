@@ -34,7 +34,7 @@ export default function BookNurseModal({ show, onClose }) {
           <button
             className="modal-btn whatsapp"
             onClick={() =>
-              window.open("https://wa.me/919999327975?text=Hi, I’d like to book a nurse", "_blank")
+              window.open("https://wa.me/919999327975?text=Hi, I’d like to book a patient care service.", "_blank")
             }
           >
             <FaWhatsapp /> Connect via WhatsApp

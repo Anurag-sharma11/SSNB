@@ -62,33 +62,34 @@ const serviceData = {
     background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeQNqQbBDeQhhhKrrrdqI-ZemwSVwv8wX8hg&s')",
   },
 
-  "tracheostomy-care": {
-    title: "Tracheostomy Care",
-    desc: "Our expert nurses provide complete tracheostomy management, ensuring cleanliness, comfort, and safety for the patient.",
-    list: [
-      "Tube cleaning and maintenance",
-      "Sterile suctioning procedures",
-      "Infection prevention",
-      "Monitoring and oxygen management",
-    ],
-    quote: "“Precision and care — because every breath matters.”",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWXaxfNhb3YX-5L8bNU7cuyKKD7bz3b3qrxQ&s",
-    background: "url('https://media.gettyimages.com/id/2236035407/video/asian-nurse-suctions-mucus-from-a-tube-in-the-throat-of-a-patient-who-had-a-tracheostomy-and.jpg?s=640x640&k=20&c=fEkBwQp8JtoZHvyJntv2NMgBhYbOHgAJ2339bWmtR7I=')",
-  },
+  "paralytic-fracture-care": {
+  title: "Paralytic & Fracture Patient Care",
+  desc: "We provide specialized nursing support for patients recovering from paralysis or bone fractures. Our team ensures comfort, safety, and progressive recovery through guided movement and regular monitoring.",
+  list: [
+    "Mobility and positioning assistance",
+    "Daily physiotherapy coordination",
+    "Pain management and medication support",
+    "Continuous recovery monitoring",
+  ],
+  quote: "“Helping patients regain strength and independence with care and patience.”",
+  image: "https://plus.unsplash.com/premium_photo-1661292052654-32d8875632c9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFyYWx5c2lzfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
+  background: "url('https://img.freepik.com/free-photo/unrecognizable-doctor-examining-leg-senior-patient-nursing-home_637285-11439.jpg?semt=ais_hybrid&w=740&q=80')",
+},
 
-  "gastrostomy-care": {
-    title: "Gastrostomy Care",
-    desc: "We handle gastrostomy care with high medical hygiene standards. Our staff ensures safe and comfortable feeding for patients with feeding tubes.",
-    list: [
-      "Tube cleaning and replacement support",
-      "Safe feeding and hygiene maintenance",
-      "Infection control",
-      "Continuous monitoring",
-    ],
-    quote: "“Dedicated care with safety and compassion.”",
-    image: "https://media.istockphoto.com/id/1152499860/vector/percutaneous-endoscopic-gastronomy.jpg?s=612x612&w=0&k=20&c=m7Mrv4IkYY_SB8ee7xk_Cdw0jdi0t28c_OvwVHB01eo=",
-    background: "url('https://media.istockphoto.com/id/1370358685/photo/multicolored-pills-scattered-from-white-plastic-medicine-container.jpg?s=612x612&w=0&k=20&c=zknrVfCELovlvvXKrAlWKLnFLfkMQF8nh9k2d97pJkE=')",
-  },
+"wound-dressing": {
+  title: "Wound Dressing & Medical Assistance",
+  desc: "Our nurses provide sterile and professional wound dressing care at home. From surgical wounds to minor injuries, we ensure quick healing and infection-free recovery.",
+  list: [
+    "Regular dressing changes with sterile materials",
+    "Post-surgical wound management",
+    "Infection prevention and cleaning",
+    "Doctor-updated recovery tracking",
+  ],
+  quote: "“Healing starts with gentle and precise care.”",
+  image: "https://www.shutterstock.com/shutterstock/videos/1101847461/thumb/1.jpg?ip=x480",
+  background: "url('https://prevent-and-protect.com/wp-content/uploads/hyg.-Verbandwechsel_shutterstock_1354781948_1layer_LoRes-1230x921.png')",
+},
+
 
   "injection-on-call": {
     title: "Injection On Call",

@@ -10,8 +10,6 @@ import "./NavbarCustom.css";
 import Fuse from "fuse.js";
 import { useState } from "react";
 import searchData from "../searchData";
-import Services from "../pages/Services";
-import Contacts from "../pages/Contacts";
 
 
 
@@ -127,7 +125,7 @@ function AppNavbar() {
                 Contact
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/#feedback">
+              <NavDropdown.Item as={Link} to="/feedback">
                 Feedback
               </NavDropdown.Item>
             </NavDropdown>

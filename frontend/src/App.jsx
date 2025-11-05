@@ -6,7 +6,7 @@ import FAQ from "./components/FAQ";
 import FormPage from "./components/FormPage";
 import Gallery from "./pages/Gallery";
 import Services from "./pages/Services";
-
+import Feedback from "./pages/Feedback";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} /> {/* ✅ Route added */}
         <Route path="/services" element={<Services />} /> {/* ✅ Route added */}
         <Route path="/contact" element={<Contacts />} />
+        <Route path="/feedback" element={<Feedback />} />
       </Routes>
     </Router>
   );

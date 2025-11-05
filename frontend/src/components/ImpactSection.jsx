@@ -49,7 +49,7 @@ const ImpactSection = () => {
         <div className="impact-card">
           <HeartPulse size={45} className="impact-icon" />
           <h3 className="impact-number">{Math.round(counts.nurses)}+</h3>
-          <p className="impact-label">Certified Nurses</p>
+          <p className="impact-label">Trusted Staff</p>
         </div>
 
         <div className="impact-card">
@@ -59,10 +59,13 @@ const ImpactSection = () => {
         </div>
 
         <div className="impact-card">
-          <Hospital size={45} className="impact-icon" />
-          <h3 className="impact-number">{Math.round(counts.hospitals)}+</h3>
-          <p className="impact-label">Partner Hospitals</p>
-        </div>
+  <Hospital size={45} className="impact-icon" />
+  <h3 className="impact-number">Locations</h3>
+  <p className="impact-label">
+    Delhi NCR, Mumbai, Bangalore & Many More
+  </p>
+</div>
+
 
         <div className="impact-card">
           <Clock size={45} className="impact-icon" />

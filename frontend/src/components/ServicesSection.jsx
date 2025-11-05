@@ -13,15 +13,16 @@ import {
 
 const ServicesSection = () => {
   const services = [
-    { icon: <HeartPulse size={42} />, title: "Patient Care" },
-    { icon: <User size={42} />, title: "Elder Caretaker" },
-    { icon: <Baby size={42} />, title: "Baby Care" },
-    { icon: <Stethoscope size={42} />, title: "Male/Female Nurses" },
-    { icon: <Brain size={42} />, title: "Tracheostomy Care Nurses" },
-    { icon: <ShieldPlus size={42} />, title: "Gastrostomy Care" },
-    { icon: <Syringe size={42} />, title: "Injection On Call" },
-    { icon: <Dumbbell size={42} />, title: "Physiotherapy Services" },
-  ];
+  { icon: <HeartPulse size={42} />, title: "Patient Care" },
+  { icon: <User size={42} />, title: "Elder Caretaker" },
+  { icon: <Baby size={42} />, title: "Baby Care" },
+  { icon: <Stethoscope size={42} />, title: "Male/Female Nurses" },
+  { icon: <Brain size={42} />, title: "Paralytic & Fracture Patient Care" },
+  { icon: <ShieldPlus size={42} />, title: "Wound Dressing & Medical Assistance" },
+  { icon: <Syringe size={42} />, title: "Injection On Call" },
+  { icon: <Dumbbell size={42} />, title: "Physiotherapy Services" },
+];
+
 
   return (
     <section className="services-section" id="services">

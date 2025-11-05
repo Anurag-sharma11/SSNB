@@ -1,0 +1,314 @@
+.feedback-wall {
+  background: #f9fafb;
+  padding: 70px 0 90px 0; /* reduced top from 100 → 70 */
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* --- Section Header --- */
+.feedback-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.feedback-subtitle {
+  background: #e2e8f0;
+  color: #334155;
+  padding: 6px 16px;
+  border-radius: 40px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.feedback-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-top: 20px;
+}
+
+.feedback-desc {
+  color: #64748b;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 10px auto 0;
+  line-height: 1.5rem;
+}
+
+/* --- Rows --- */
+.feedback-row {
+  display: flex;
+  gap: 15px;          /* was 30px — tighter horizontal spacing */
+  width: max-content;
+  margin: 0 auto;
+  padding: 0 50px;    /* was 100px — smaller side padding */
+}
+
+
+.feedback-row-top {
+  margin-bottom: 20px; /* extra space between top & bottom */
+  animation: scrollLeft 40s linear infinite;
+}
+
+.feedback-row-bottom {
+  animation: scrollRight 40s linear infinite;
+}
+
+/* --- Cards --- */
+.feedback-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 22px 16px 22px;  /* ✅ reduce bottom padding */
+  width: 440px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #091016;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Comment text --- */
+.comment {
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* --- Profile section --- */
+.profile {
+  display: flex;
+  align-items: flex-start;  /* change from center */
+  gap: 10px;
+  margin-top: 4px;          /* slight downward shift of the whole row */
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  background: #e0e7ff;
+  color: #1e40af;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 2px;
+     
+}
+
+.role {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: -3px;
+  margin-top: 0;        /* removes weird negative spacing */
+  margin-bottom: 0;
+}
+
+/* --- Stars --- */
+.stars {
+  margin-top: -2px;
+  color: #facc15;
+  font-size: 0.9rem;
+}
+/* Location text under role */
+.location {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Verified review text */
+.verified {
+  font-size: 0.75rem;
+  color: #22c55e;
+  margin-top: 2px;       /* was 6px — reduce top space */
+  margin-bottom: 0;      /* remove extra bottom space */
+  font-weight: 500;
+  line-height: 1rem;     /* keeps it compact */
+}
+
+.rating-label {
+  font-weight: 600;
+  color: #334155;
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+
+/* --- Smooth Animations --- */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* --- Fade Edges --- */
+.feedback-wall::before,
+.feedback-wall::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 220px; /* wider for smoother fade */
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.feedback-wall::before {
+  left: 0;
+  background: linear-gradient(to right, #f9fafb 40%, transparent);
+}
+
+.feedback-wall::after {
+  right: 0;
+  background: linear-gradient(to left, #f9fafb 40%, transparent);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .feedback-card {
+    width: 280px;
+  }
+  .feedback-row {
+    padding: 0 40px;
+  }
+  .feedback-wall::before,
+  .feedback-wall::after {
+    width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback-card {
+    width: 240px;
+  }
+  .feedback-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* --- Add Feedback Form --- */
+.add-feedback-container {
+  text-align: center;
+  margin-top: 80px;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #e2e8f0;
+}
+
+.add-feedback-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.add-feedback-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.add-feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select,
+textarea {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+textarea {
+  resize: none;
+}
+
+.submit-btn {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .add-feedback-container {
+    margin-top: 50px;
+    padding: 25px 16px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}

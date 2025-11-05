@@ -4,10 +4,12 @@ import logo from "../assets/Logo.png";
 import ologo from "../assets/PNGL.JPG";
 import CFLOGO from "../assets/FLOGO.jpg";
 import BookNurseModal from "../components/BookNurseModal"; // ✅ import modal
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const [showIntro, setShowIntro] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setShowIntro(false), 2500);
@@ -41,7 +43,10 @@ const HeroSection = () => {
               >
                 Book a Nurse
               </button>
-              <button className="btn secondary">Learn More</button>
+              <button className="btn secondary" onClick={() => navigate("/about")}>
+                Learn More
+              </button>
+
             </div>
           </div>
 

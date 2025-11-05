@@ -77,10 +77,10 @@ export default function CompanyTimeline() {
       >
         <div className="timeline-item left">
           <div className="content">
-            <h3>2015 — Foundation</h3>
+            <h3>2014 — Foundation</h3>
             <p>
               Seva Sai Nursing Bureau began with a small but dedicated team of{" "}
-              <b>five nurses</b> in Delhi, committed to providing quality patient
+              <b>Twenty Staff</b> in Delhi, committed to providing quality patient
               care at home.
             </p>
           </div>
@@ -112,8 +112,21 @@ export default function CompanyTimeline() {
             <h3>2023 — Expansion</h3>
             <p>
               Introduced <b>elderly care and post-surgery support</b> services
-              with a larger team and updated healthcare training modules.
+              with a larger team and updated healthcare training modules & adding
+              over 50 trained staff and professional attendants..
             </p>
+          </div>
+        </div>
+        <div className="timeline-item left">
+          <div className="content">
+            <h3>2025 — Expansion</h3>
+            <p>
+      Today, <b>Seva Sai Nursing Bureau</b> proudly operates with a team of
+      <b> 300+ certified nurses and attendants</b>, delivering trusted healthcare
+      services across <b>Delhi NCR and major metro cities</b>. Our expansion
+      reflects our continuous commitment to quality care, compassion, and
+      excellence in home healthcare.
+    </p>
           </div>
         </div>
       </div>

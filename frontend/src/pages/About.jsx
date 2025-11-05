@@ -31,7 +31,12 @@ export default function About() {
             best service with empathy and professionalism.
           </p>
 
-          <button className="learn-btn">Learn More</button>
+          <p className="about-text">
+            Choosing Seva Sai Nursing Bureau means choosing <b>reliability, professionalism,
+              and peace of mind</b>. We don’t just provide medical help — we build
+            relationships based on empathy, care, and genuine human connection.
+          </p>
+          
         </div>
 
         <div className="about-image">

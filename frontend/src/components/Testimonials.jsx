@@ -1,27 +1,29 @@
 import React from "react";
 import "./Testimonials.css";
 import { useEffect } from "react";
+import RK from "../assets/RK.png";
+import SRD from "../assets/SDR.png";
 
 export default function Testimonials() {
   const testimonials = [
     {
       name: "Rajesh Kumar",
       role: "Patient's Son – Delhi",
-      img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+      img: RK,
       review:
         "Seva Sai Nursing Bureau provided outstanding home nursing care for my father after surgery. Their staff were compassionate and very professional.",
     },
     {
       name: "Anjali Mehra",
       role: "Client – Noida",
-      img: "https://www.tagmedstaffing.com/wp-content/uploads/2023/12/shutterstock_2193445651-e1703703014306-1-1024x806.jpg",
+      img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
       review:
         "I’m grateful for the caretakers who supported my mother’s recovery. They were punctual, friendly, and well-trained.",
     },
     {
-      name: "Dr. Amit Verma",
+      name: "Dr. Shrishti Ramdaas", 
       role: "Referring Doctor – Gurugram",
-      img: "https://static.pincel.app/cdn-cgi/image/width=450,format=auto/https://blog.pincel.app/wp-content/uploads/2024/02/medical_worker_in_uniform_happy_full_body_with_medical_equipment_in_a_bright_clinic_setting_background-1.jpeg",
+      img: SRD,
       review:
         "I often recommend Seva Sai Nursing Bureau to my patients. Their team delivers quality and consistent patient care every time.",
     },
