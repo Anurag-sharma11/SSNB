@@ -1,8 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import "./CompanyTimeline.css";
+import useIsMobile from "../hooks/useIsMobile";
+import useIsTablet from "../hooks/useIsTablet";
 
 export default function CompanyTimeline() {
   const timelineRef = useRef(null);
+  const isMobile = useIsMobile();
+const isTablet = useIsTablet();
+
 
   useEffect(() => {
     const el = timelineRef.current;
@@ -71,10 +76,11 @@ export default function CompanyTimeline() {
       <h2 className="timeline-title">Our Journey</h2>
 
       <div
-        className="timeline"
-        ref={timelineRef}
-        style={{ "--line-fill": "0%", "--line-glow-opacity": "0.25" }}
-      >
+  className={`timeline ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}
+  ref={timelineRef}
+  style={{ "--line-fill": "0%", "--line-glow-opacity": "0.25" }}
+>
+
         <div className="timeline-item left">
           <div className="content">
             <h3>2014 — Foundation</h3>

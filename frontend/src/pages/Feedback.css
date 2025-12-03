@@ -312,3 +312,101 @@ textarea {
     flex-direction: column;
   }
 }
+
+/* ======================================================
+   📱 MOBILE FIXES (via hook class)
+====================================================== */
+.feedback-wall.mobile {
+  padding: 40px 10px !important;
+  overflow: visible !important;
+}
+
+/* Remove left-right fade overlay */
+.feedback-wall.mobile::before,
+.feedback-wall.mobile::after {
+  display: none !important;
+}
+
+/* Show cards in one column */
+.feedback-row.mobile {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  padding: 0 !important;
+  gap: 20px !important;
+  animation: none !important; /* disable scrolling animation */
+}
+
+/* Make card full width in mobile */
+.feedback-card.mobile {
+  width: 100% !important;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Add-feedback form cleaner view */
+.add-feedback-container.mobile {
+  max-width: 100% !important;
+  padding: 20px 10px !important;
+  margin-top: 40px !important;
+}
+/* Expand comments on mobile for consistent height */
+.feedback-card.mobile .comment {
+  -webkit-line-clamp: 4 !important;
+}
+/* ======================================================
+   📱 MOBILE ORDER FIX — SHOW FORM FIRST
+====================================================== */
+
+.feedback-wall.mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1️⃣ Show form FIRST */
+.feedback-wall.mobile .add-feedback-container {
+  order: 1;
+}
+
+/* 2️⃣ Show reviews AFTER form */
+.feedback-wall.mobile .feedback-row-top,
+.feedback-wall.mobile .feedback-row-bottom {
+  order: 2;
+}
+/* ======================================================
+   📱 MOBILE ORDER — FORM FIRST, THEN HEADER, THEN REVIEWS
+====================================================== */
+
+.feedback-wall.mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1️⃣ Form FIRST */
+.feedback-wall.mobile .add-feedback-container {
+  order: 1;
+}
+
+/* 2️⃣ Header SECOND */
+.feedback-wall.mobile .feedback-header {
+  order: 2;
+}
+
+/* 3️⃣ Reviews LAST */
+.feedback-wall.mobile .feedback-row-top,
+.feedback-wall.mobile .feedback-row-bottom {
+  order: 3;
+}
+/* ======================================================
+   📱 MOBILE SPACING FIX FOR HEADER
+====================================================== */
+
+/* More space ABOVE the header */
+.feedback-header.mobile {
+  margin-top: 30px !important; /* increase top spacing */
+}
+
+/* Less space BELOW the header */
+.feedback-header.mobile {
+  margin-bottom: 10px !important; /* decrease bottom spacing */
+}

@@ -78,3 +78,42 @@
   box-shadow: 0 0 20px cyan;
   transform: scale(1.05);
 }
+/* ======================================================
+   💙 MOBILE NAVBAR (hook-based)
+====================================================== */
+.contact-navbar.mobile {
+  height: 70px !important;
+  padding: 0 1.2rem !important;
+  justify-content: space-between;
+}
+
+.contact-navbar.mobile .contact-logo img {
+  width: 60px !important;
+  height: 50px !important;
+  border-radius: 10px;
+}
+
+.contact-navbar.mobile .contact-nav-links {
+  gap: 1rem !important;
+}
+
+.contact-navbar.mobile .contact-nav-links li a {
+  font-size: 0.9rem !important;
+}
+
+
+/* ======================================================
+   💙 TABLET NAVBAR
+====================================================== */
+.contact-navbar.tablet {
+  padding: 0 2rem !important;
+}
+
+.contact-navbar.tablet .contact-logo img {
+  width: 70px;
+  height: 55px;
+}
+
+.contact-navbar.tablet .contact-nav-links li a {
+  font-size: 1rem;
+}

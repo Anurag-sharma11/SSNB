@@ -104,3 +104,28 @@
         max-width: 320px;
     }
     }
+/* ===========================================================
+   MOBILE OVERRIDES (using hook class)
+=========================================================== */
+.testimonial-grid.mobile {
+  grid-template-columns: 1fr !important; /* Single column */
+  justify-items: center;
+}
+
+.testimonial-card.mobile {
+  width: 95% !important;
+  max-width: 340px;
+  height: auto !important; /* let card grow naturally on mobile */
+}
+
+/* ===========================================================
+   TABLET OVERRIDES
+=========================================================== */
+.testimonial-grid.tablet {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 25px;
+}
+
+.testimonial-card.tablet {
+  height: auto !important;
+}

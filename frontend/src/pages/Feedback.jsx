@@ -3,7 +3,13 @@ import axios from "axios";
 import io from "socket.io-client";
 import "./Feedback.css";
 import AppNavbar from "../components/AppNavbar";
+import useIsMobile from "../hooks/useIsMobile";
+import useIsTablet from "../hooks/useIsTablet";
+
 export default function Feedback() {
+  const isMobile = useIsMobile();
+const isTablet = useIsTablet();
+
   const [feedbacks, setFeedbacks] = useState([]);
   const socketRef = useRef(null);
 
@@ -173,8 +179,15 @@ export default function Feedback() {
   return (
     <>
     <AppNavbar />
-    <section className="feedback-wall" id="feedback">
-      <div className="feedback-header">
+    <section
+  className={`feedback-wall ${isMobile ? "mobile" : ""} ${
+    isTablet ? "tablet" : ""
+  }`}
+  id="feedback"
+>
+
+      <div className={`feedback-header ${isMobile ? "mobile" : ""}`}>
+
         <h2 className="feedback-title">What Our Patients Say 💬</h2>
         <p className="feedback-desc">
           See how Seva Sai Nursing Bureau provides trusted care for patients and
@@ -183,9 +196,11 @@ export default function Feedback() {
       </div>
 
       {/* Scrolling Row 1 */}
-      <div className="feedback-row feedback-row-top">
+      <div className={`feedback-row feedback-row-top ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
+
         {[...feedbacks].slice(0, 6).map((f, i) => (
-          <div className="feedback-card" key={i}>
+          <div className={`feedback-card ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`} key={i}>
+
             <p className="comment">“{f.comment}”</p>
 
             <div className="profile">
@@ -206,9 +221,11 @@ export default function Feedback() {
       </div>
 
       {/* Scrolling Row 2 */}
-      <div className="feedback-row feedback-row-bottom">
+      <div className={`feedback-row feedback-row-bottom ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
+
         {[...feedbacks].slice(6, 12).map((f, i) => (
-          <div className="feedback-card" key={`bottom-${i}`}>
+          <div className={`feedback-card ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`} key={`bottom-${i}`}>
+
             <p className="comment">“{f.comment}”</p>
 
             <div className="profile">
@@ -228,7 +245,8 @@ export default function Feedback() {
         ))}
       </div>
       {/* ➕ Add Feedback Form */}
-<div className="add-feedback-container">
+<div className={`add-feedback-container ${isMobile ? "mobile" : ""}`}>
+
   <h3 className="add-feedback-title">Share Your Experience 💙</h3>
   <p className="add-feedback-desc">
     Your feedback helps us improve and serve patients better.

@@ -3,8 +3,13 @@ import "./Testimonials.css";
 import { useEffect } from "react";
 import RK from "../assets/RK.png";
 import SRD from "../assets/SDR.png";
+import useIsMobile from "../hooks/useIsMobile";
+import useIsTablet from "../hooks/useIsTablet";
 
 export default function Testimonials() {
+  const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+
   const testimonials = [
     {
       name: "Rajesh Kumar",
@@ -66,7 +71,12 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section">
       <h2 className="testimonials-title">What Our Clients Say</h2>
-      <div className="testimonial-grid">
+      <div
+  className={`testimonial-grid ${isMobile ? "mobile" : ""} ${
+    isTablet ? "tablet" : ""
+  }`}
+>
+
         {testimonials.map((item, index) => (
           <div className="testimonial-card" key={index}>
             <div className="testimonial-img">

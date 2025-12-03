@@ -7,7 +7,8 @@
   color: #1e293b; /* darker text for contrast */
   padding: 60px 80px;
   gap: 40px;
-  margin-left: 80px;
+  margin-left: 100px;
+  
 }
 
 /* Left side (Text) */
@@ -86,5 +87,35 @@
   .about-image img {
     width: 250px;
     margin-top: 30px;
+  }
+}
+/* Restore original desktop spacing */
+@media (min-width: 1024px) {
+  .about-section {
+    padding-left: 120px;   /* same spacing as original */
+    padding-right: 80px;
+  }
+
+  .about-content {
+    max-width: 650px;      /* wide clean text block */
+  }
+
+  .about-title {
+    margin-top: 50px;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .about-image img {
+    width: 380px;          /* slightly bigger logo */
+  }
+
+  .about-image {
+    margin-left: 40px;     /* space between text & logo */
   }
 }

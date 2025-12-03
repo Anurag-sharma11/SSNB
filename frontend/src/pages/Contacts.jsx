@@ -3,8 +3,14 @@ import React, { useState } from "react";
 import "./Contacts.css";
 import ETH from "../assets/ETH.mp4";
 import ContactNavbar from "../components/ContactNavbar";
+import useIsMobile from "../hooks/useIsMobile";
+import useIsTablet from "../hooks/useIsTablet";
+
 
 export default function Contact() {
+  const isMobile = useIsMobile();
+const isTablet = useIsTablet();
+
   const [formData, setFormData] = useState({
     name: "",
     contact: "",
@@ -81,7 +87,8 @@ const handleSubmit = async (e) => {
     <>
     <ContactNavbar />
 
-    <div className="contact-page">
+    <div className={`contact-page ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
+
       {/* 🌍 Background video */}
       <video autoPlay loop muted playsInline className="background-video">
   <source src={ETH} type="video/mp4" />
@@ -89,7 +96,8 @@ const handleSubmit = async (e) => {
 
 
       {/* 🧊 Contact form */}
-      <div className="contact-container">
+      <div className={`contact-container ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
+
         <h2>Contact Us</h2>
         <form onSubmit={handleSubmit}>
           <input
