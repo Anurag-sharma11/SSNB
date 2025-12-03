@@ -5,6 +5,7 @@ import ETH from "../assets/ETH.mp4";
 import ContactNavbar from "../components/ContactNavbar";
 import useIsMobile from "../hooks/useIsMobile";
 import useIsTablet from "../hooks/useIsTablet";
+import Footer from "../components/Footer";
 
 
 export default function Contact() {
@@ -147,6 +148,8 @@ const handleSubmit = async (e) => {
         {status && <p className="status">{status}</p>}
       </div>
     </div>
+    {/* Footer Component */}
+          <Footer />
     </>
   );
 }

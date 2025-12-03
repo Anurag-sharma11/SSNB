@@ -30,8 +30,9 @@ const HeroSection = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Empowering Families with <span>Trusted Nursing Care</span>
+              Empowering Families with <span>Trusted Nursing Care</span><p></p>
             </h1>
+            <span className="txs">24 x 7 Elder care</span>
             <p className="hero-subtext">
               At Seva Sai Nursing Bureau, we bring professional healthcare to
               your home — combining medical expertise with compassion and trust.
@@ -43,7 +44,7 @@ const HeroSection = () => {
               >
                 Book a Nurse
               </button>
-              <button className="btn secondary" onClick={() => navigate("/about")}>
+              <button className="btn primary" onClick={() => navigate("/about")}>
                 Learn More
               </button>
 

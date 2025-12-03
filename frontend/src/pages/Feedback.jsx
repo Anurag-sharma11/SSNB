@@ -5,7 +5,7 @@ import "./Feedback.css";
 import AppNavbar from "../components/AppNavbar";
 import useIsMobile from "../hooks/useIsMobile";
 import useIsTablet from "../hooks/useIsTablet";
-
+import Footer from "../components/Footer";
 export default function Feedback() {
   const isMobile = useIsMobile();
 const isTablet = useIsTablet();
@@ -310,6 +310,8 @@ const isTablet = useIsTablet();
 </div>
 
     </section>
+    {/* Footer Component */}
+          <Footer />
     </>
   );
 }

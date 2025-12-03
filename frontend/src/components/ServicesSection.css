@@ -24,57 +24,76 @@
 }
 
 /* ====== Card Design ====== */
-.service-card {
+/* Modern Card Style */
+.service-card-modern {
+  width: 100%;
+  max-width: 360px;
   background: #ffffff;
-  border-radius: 20px;
-  width: 250px;
-  height: 250px;
-  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.12);
-  border: 1px solid rgba(0, 136, 204, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  perspective: 1000px;
-  cursor: pointer;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  margin: 0 auto;
 }
 
-.service-icon {
-  background: radial-gradient(circle at top left, #e0f7fa, #b3e5fc);
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
+/* Hover effect */
+.service-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Icon wrapper */
+.service-img-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: #f0f9ff;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0, 136, 204, 0.15);
-  transition: transform 0.3s ease;
+  align-items: center;
+  margin-bottom: 18px;
   color: #0284c7;
+  font-size: 40px;
 }
 
-.service-name {
-  font-size: 1.05rem;
+/* Title */
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.service-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+/* Button */
+.service-btn {
+  padding: 10px 20px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-/* ====== Hover Effects ====== */
-.service-card:hover {
-  transform: scale(1.07) rotateX(8deg) rotateY(-6deg);
-  box-shadow: 0 20px 45px rgba(2, 132, 199, 0.25);
-  border-color: rgba(2, 132, 199, 0.2);
+.service-btn:hover {
+  background: #000;
 }
 
-.service-card:hover .service-icon {
-  transform: scale(1.15) rotateZ(5deg);
-  background: radial-gradient(circle at bottom right, #bae6fd, #7dd3fc);
-}
-
-.service-card:hover .service-name {
-  color: #0284c7;
+/* Fix for responsive grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
 }
 
 /* ====== Responsiveness ====== */
@@ -98,4 +117,60 @@
   .services-title {
     font-size: 2rem;
   }
+}
+/* Image at top */
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+/* Header icon + title layout */
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.service-icon {
+  color: #0284c7;
+  background: #e0f7ff;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+#img-patient {
+  object-position: center 15%;
+}
+
+#img-Elder {
+  object-position: center 60%;
+}
+
+#img-Baby {
+  object-position: center 35%;
+}
+
+#img-MF {
+  object-position: center 25%;
+}
+
+#img-wound {
+  object-position: center 22%;
+}
+
+#img-injec {
+  object-position: center 30%;
+}
+
+#img-physio {
+  object-position: center 20%;
+}
+#img-para {
+  object-position: center 15%;
 }

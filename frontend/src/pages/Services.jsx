@@ -4,7 +4,7 @@ import AppNavbar from "../components/AppNavbar";
 import ServiceCards from "../components/ServiceCards";
 import ServiceDetails from "../components/ServiceDetails";
 import "./Services.css"; // ✅ We'll make this for page styling
-
+import Footer from "../components/Footer";
 export default function Services() {
   const [activeService, setActiveService] = useState(null);
 
@@ -39,6 +39,8 @@ export default function Services() {
           )}
         </section>
       </main>
+      {/* Footer Component */}
+          <Footer />
     </>
   );
 }
