@@ -12,6 +12,8 @@ const isTablet = useIsTablet();
 
   const [feedbacks, setFeedbacks] = useState([]);
   const socketRef = useRef(null);
+  const [pauseAnimation, setPauseAnimation] = useState(false);
+
 
   // --- Fake pre-filled reviews (displayed first) ---
   const fakeFeedbacks = [
@@ -144,7 +146,7 @@ const isTablet = useIsTablet();
     setFeedbacks(fakeFeedbacks.slice(0, 12));
 
     // 2️⃣ Connect socket for live updates
-    socketRef.current = io("http://localhost:5000"); // change to your backend domain if hosted
+    socketRef.current = io("https://ssnb-backend.onrender.com"); // change to your backend domain if hosted
     socketRef.current.on("connect", () => console.log("✅ Socket connected"));
     socketRef.current.on("newFeedback", (newItem) => {
       setFeedbacks((prev) => {
@@ -161,7 +163,7 @@ const isTablet = useIsTablet();
     // 3️⃣ Fetch backend feedbacks and merge
     async function loadFeedbacks() {
       try {
-        const res = await axios.get("/api/feedbacks");
+        const res = await axios.get("https://ssnb-backend.onrender.com/api/feedbacks");
         const backend = Array.isArray(res.data) ? res.data.reverse() : [];
         const combined = [...fakeFeedbacks, ...backend];
         setFeedbacks(combined.slice(0, 12));
@@ -196,7 +198,7 @@ const isTablet = useIsTablet();
       </div>
 
       {/* Scrolling Row 1 */}
-      <div className={`feedback-row feedback-row-top ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
+      <div className={`feedback-row feedback-row-top ${pauseAnimation ? "paused" : ""} ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
 
         {[...feedbacks].slice(0, 6).map((f, i) => (
           <div className={`feedback-card ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`} key={i}>
@@ -221,7 +223,7 @@ const isTablet = useIsTablet();
       </div>
 
       {/* Scrolling Row 2 */}
-      <div className={`feedback-row feedback-row-bottom ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
+      <div className={`feedback-row feedback-row-bottom ${pauseAnimation ? "paused" : ""} ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`}>
 
         {[...feedbacks].slice(6, 12).map((f, i) => (
           <div className={`feedback-card ${isMobile ? "mobile" : ""} ${isTablet ? "tablet" : ""}`} key={`bottom-${i}`}>
@@ -271,10 +273,21 @@ const isTablet = useIsTablet();
       }
 
       try {
-        await axios.post("http://localhost:5000/api/feedbacks", newFeedback);
+        await axios.post("https://ssnb-backend.onrender.com/api/feedbacks", newFeedback);
 
         e.target.reset();
         alert("✅ Thank you! Your feedback has been submitted.");
+
+        // Show new feedback instantly in UI
+        setFeedbacks((prev) => {
+          const updated = [newFeedback, ...prev];
+          return updated.slice(0, 12); // keep only 12
+        });
+
+        // Pause animation for 10 seconds
+        setPauseAnimation(true);
+        setTimeout(() => setPauseAnimation(false), 10000);
+
       } catch (err) {
         console.error("Feedback submission failed:", err);
         alert("⚠️ Something went wrong. Please try again later.");

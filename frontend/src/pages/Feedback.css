@@ -410,3 +410,8 @@ textarea {
 .feedback-header.mobile {
   margin-bottom: 10px !important; /* decrease bottom spacing */
 }
+
+/* Pause auto-scroll when new feedback is shown */
+.feedback-row.paused {
+  animation-play-state: paused !important;
+}
