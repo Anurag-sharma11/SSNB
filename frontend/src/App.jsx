@@ -6,7 +6,6 @@ import Contacts from "./pages/Contacts";
 import FAQ from "./components/FAQ";
 import FormPage from "./components/FormPage";
 import GalleryTest from "./pages/GalleryTest";
-import Gallery from "./pages/Gallery";
 import Services from "./pages/Services";
 import Feedback from "./pages/Feedback";
 import HeroScrollTest from "./components/HeroScrollTest";
@@ -23,7 +22,7 @@ function App() {
         
         <Route path="/" element={<FAQ />} />
         <Route path="/form" element={<FormPage />} />
-        <Route path="/gallery" element={<Gallery />} /> {/* ✅ Route added */}
+        <Route path="/gallery" element={<GalleryTest />} /> {/* ✅ Route added */}
         <Route path="/services" element={<Services />} /> {/* ✅ Route added */}
         <Route path="/contact" element={<Contacts />} />
         <Route path="/feedback" element={<Feedback />} />
