@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./Gallery.css";
-import AppNavbar from "../components/AppNavbar";
-
+import Navbar3D from "../components/Navbar3D";
 // ✅ Import your local images here
 import img1 from "../assets/img1.jpg";
 import img2 from "../assets/img2.jpg";
@@ -51,7 +50,7 @@ export default function GalleryTry() {
   return (
     <>
       {/* ✅ Navbar on top */}
-      <AppNavbar />
+      <Navbar3D />
 
       {/* ✅ Add top margin to avoid overlap with fixed navbar */}
       <div className="parallax-wall-container mt-5 pt-5">

@@ -1,6 +1,5 @@
 import React from "react";
-import AppNavbar from "../components/AppNavbar";
-import "./About.css";
+import Navbar3D from "../components/Navbar3D";import "./About.css";
 import logo from "../assets/Logo.png";
 
 import useIsMobile from "../hooks/useIsMobile";
@@ -17,7 +16,7 @@ export default function About() {
 
   return (
     <>
-      <AppNavbar />
+      <Navbar3D />
 
       <section
   className="about-section"

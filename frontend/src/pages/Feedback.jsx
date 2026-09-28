@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import io from "socket.io-client";
 import "./Feedback.css";
-import AppNavbar from "../components/AppNavbar";
+import Navbar3D from "../components/Navbar3D";
 import useIsMobile from "../hooks/useIsMobile";
 import useIsTablet from "../hooks/useIsTablet";
 import Footer from "../components/Footer";
@@ -165,7 +165,7 @@ const isTablet = useIsTablet();
       try {
         const res = await axios.get("https://ssnb-backend.onrender.com/api/feedbacks");
         const backend = Array.isArray(res.data) ? res.data.reverse() : [];
-        const combined = [...fakeFeedbacks, ...backend];
+        const combined = [...backend, ...fakeFeedbacks];
         setFeedbacks(combined.slice(0, 12));
       } catch (err) {
         console.error("⚠️ Backend fetch failed, showing fake only", err);
@@ -180,7 +180,7 @@ const isTablet = useIsTablet();
 
   return (
     <>
-    <AppNavbar />
+    <Navbar3D />
     <section
   className={`feedback-wall ${isMobile ? "mobile" : ""} ${
     isTablet ? "tablet" : ""

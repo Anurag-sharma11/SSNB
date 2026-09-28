@@ -1,6 +1,6 @@
 // src/pages/Services.jsx
 import React, { useState } from "react";
-import AppNavbar from "../components/AppNavbar";
+import Navbar3D from "../components/Navbar3D";
 import ServiceCards from "../components/ServiceCards";
 import ServiceDetails from "../components/ServiceDetails";
 import "./Services.css"; // ✅ We'll make this for page styling
@@ -10,7 +10,7 @@ export default function Services() {
 
   return (
     <>
-      <AppNavbar />
+     <Navbar3D />
 
       <main className="services-page">
         {/* --- Hero Header --- */}

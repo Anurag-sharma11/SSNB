@@ -1,0 +1,750 @@
+/* =========================================================
+   SSNB — VERSION 1
+   FLOATING MEDICAL GLASS NAVBAR
+   ========================================================= */
+
+
+.ssnb-floating-nav {
+  position: fixed;
+
+  top: 16px;
+  left: 22px;
+  right: 22px;
+
+  z-index: 2000;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN FLOATING PANEL
+   ========================================================= */
+
+.ssnb-nav-shell {
+  pointer-events: auto;
+
+  width: 100%;
+
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 8px 12px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(239, 248, 255, 0.91)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 18px 45px rgba(16, 43, 75, 0.13),
+    0 5px 15px rgba(16, 43, 75, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* subtle floating effect */
+
+.ssnb-nav-shell:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 22px 50px rgba(16, 43, 75, 0.16),
+    0 7px 18px rgba(16, 43, 75, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.ssnb-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+
+/* logo raised card */
+
+.ssnb-logo-wrap {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #e9f2fb
+    );
+
+  box-shadow:
+    5px 5px 12px rgba(24, 55, 85, 0.12),
+    -3px -3px 8px rgba(255, 255, 255, 0.95);
+
+  border: 1px solid rgba(210, 225, 240, 0.7);
+
+  transition: 0.3s ease;
+}
+
+
+.ssnb-logo-wrap img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+}
+
+
+.ssnb-brand:hover .ssnb-logo-wrap {
+  transform: translateY(-2px);
+
+  box-shadow:
+    6px 8px 16px rgba(24, 55, 85, 0.16),
+    -3px -3px 9px rgba(255, 255, 255, 1);
+}
+
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.ssnb-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.ssnb-brand-text span {
+  font-family: "Monoton", cursive;
+
+  font-size: 1.45rem;
+
+  letter-spacing: 2px;
+
+  color: #572705;
+
+  text-shadow:
+    1px 1px 0 rgba(255, 255, 255, 0.8),
+    0 3px 8px rgba(35, 54, 70, 0.16);
+}
+
+
+.ssnb-brand-text small {
+  margin-top: 5px;
+
+  font-size: 0.55rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: #31506d;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.ssnb-navigation {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  margin-left: 30px;
+}
+
+
+.ssnb-links {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.ssnb-nav-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 44px;
+
+  padding: 0 17px;
+
+  border-radius: 13px;
+
+  color: #233d57;
+
+  text-decoration: none;
+
+  font-size: 0.98rem;
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.ssnb-nav-link:hover {
+  color: #1769e8;
+
+  background: rgba(226, 239, 255, 0.75);
+
+  transform: translateY(-1px);
+}
+
+
+/* active navigation */
+
+.ssnb-nav-link.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #3478ed,
+      #1e5fd2
+    );
+
+  box-shadow:
+    0 6px 14px rgba(30, 95, 210, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   MORE DROPDOWN
+   ========================================================= */
+
+.ssnb-more-dropdown .dropdown-toggle {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 17px;
+
+  border-radius: 13px;
+
+  color: #233d57 !important;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.ssnb-more-dropdown .dropdown-toggle:hover {
+  color: #1769e8 !important;
+
+  background: rgba(226, 239, 255, 0.75);
+}
+
+
+.ssnb-more-dropdown .dropdown-menu {
+  margin-top: 12px;
+
+  padding: 8px;
+
+  min-width: 175px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 15px 35px rgba(20, 50, 80, 0.15),
+    0 3px 10px rgba(20, 50, 80, 0.08);
+}
+
+
+.ssnb-more-dropdown .dropdown-item {
+  padding: 10px 13px;
+
+  border-radius: 10px;
+
+  color: #29445e;
+
+  font-weight: 500;
+}
+
+
+.ssnb-more-dropdown .dropdown-item:hover {
+  color: #1769e8;
+
+  background: #edf5ff;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.ssnb-search-area {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+
+.ssnb-search {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.ssnb-search-input-wrap {
+  position: relative;
+}
+
+
+.ssnb-search-input-wrap input {
+  width: 230px;
+
+  height: 43px;
+
+  padding-left: 38px;
+  padding-right: 14px;
+
+  border-radius: 14px;
+
+  border: 1px solid #b8d1ee;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #233d57;
+
+  box-shadow:
+    inset 2px 2px 5px rgba(40, 70, 100, 0.05),
+    0 2px 5px rgba(40, 70, 100, 0.04);
+
+  transition: 0.25s ease;
+}
+
+
+.ssnb-search-input-wrap input:focus {
+  border-color: #3478ed;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(52, 120, 237, 0.12),
+    inset 2px 2px 5px rgba(40, 70, 100, 0.04);
+
+  outline: none;
+}
+
+
+.ssnb-search-icon {
+  position: absolute;
+
+  left: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  color: #50718f;
+
+  font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
+
+.ssnb-search-button {
+  height: 43px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 13px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #3478ed,
+      #155bd1
+    ) !important;
+
+  box-shadow:
+    0 6px 13px rgba(30, 95, 210, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.ssnb-search-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 18px rgba(30, 95, 210, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================================
+   SEARCH SUGGESTIONS
+   ========================================================= */
+
+.ssnb-suggestions {
+  position: absolute;
+
+  top: calc(100% + 9px);
+
+  left: 0;
+  right: 0;
+
+  margin: 0;
+
+  padding: 7px;
+
+  list-style: none;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid rgba(210, 225, 240, 0.9);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 15px 35px rgba(20, 50, 80, 0.14);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  z-index: 3000;
+}
+
+
+.ssnb-suggestions li {
+  padding: 10px 13px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  color: #29445e;
+
+  font-size: 0.9rem;
+
+  transition: 0.2s ease;
+}
+
+
+.ssnb-suggestions li:hover {
+  color: #1769e8;
+
+  background: #edf5ff;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+.ssnb-mobile-title {
+  flex: 1;
+
+  margin-left: 10px;
+
+  color: #18334d;
+
+  font-size: 1.05rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+.ssnb-mobile-toggle {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf6ff,
+      #dbeaff
+    );
+
+  box-shadow:
+    4px 4px 9px rgba(30, 70, 110, 0.12),
+    -3px -3px 7px rgba(255, 255, 255, 0.9);
+}
+
+
+.ssnb-mobile-toggle span {
+  width: 20px;
+  height: 2px;
+
+  border-radius: 5px;
+
+  background: #24558a;
+}
+
+
+/* =========================================================
+   HIGHLIGHT FROM SEARCH
+   ========================================================= */
+
+section.highlighted {
+  box-shadow:
+    0 0 20px rgba(0, 123, 255, 0.4);
+
+  transition:
+    box-shadow 1s ease-out;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .ssnb-brand-text span {
+    font-size: 1.15rem;
+  }
+
+  .ssnb-navigation {
+    margin-left: 15px;
+
+    gap: 8px;
+  }
+
+  .ssnb-nav-link {
+    padding: 0 11px;
+  }
+
+  .ssnb-search-input-wrap input {
+    width: 180px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .ssnb-floating-nav {
+    top: 10px;
+
+    left: 10px;
+    right: 10px;
+  }
+
+
+    .ssnb-nav-shell {
+        min-height: 66px;
+
+        padding: 7px 9px;
+
+        border-radius: 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        flex-wrap: nowrap;
+    }
+
+
+  .ssnb-logo-wrap {
+    width: 51px;
+    height: 51px;
+
+    border-radius: 14px;
+  }
+
+
+    .ssnb-navigation {
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        margin: 8px 0 0;
+
+        padding: 10px 14px;
+
+        border-radius: 16px;
+
+        background: rgba(245, 250, 255, 0.96);
+
+        box-shadow:
+            0 12px 30px rgba(16, 43, 75, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .ssnb-navigation.open {
+        display: flex;
+
+        position: absolute;
+
+        top: calc(100% + 8px);
+
+        left: 0;
+
+        right: 0;
+
+        z-index: 3000;
+    }
+
+
+    .ssnb-links {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+  }
+
+
+  .ssnb-nav-link {
+    justify-content: center;
+
+    width: 100%;
+  }
+
+
+  .ssnb-more-dropdown {
+    width: 100%;
+  }
+
+
+  .ssnb-more-dropdown .dropdown-toggle {
+    justify-content: center;
+  }
+
+
+  .ssnb-search-area {
+    width: 100%;
+  }
+
+
+  .ssnb-search {
+    width: 100%;
+  }
+
+
+  .ssnb-search-input-wrap {
+    flex: 1;
+  }
+
+
+  .ssnb-search-input-wrap input {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+  .ssnb-mobile-title {
+    font-size: 0.95rem;
+  }
+
+  .ssnb-search {
+    flex-direction: column;
+  }
+
+  .ssnb-search-input-wrap,
+  .ssnb-search-button {
+    width: 100%;
+  }
+
+}
