@@ -31,7 +31,7 @@ const Footer = () => {
 
           <div className="footer-map">
             <a
-              href="https://maps.app.goo.gl/wZbMLgLesDzRFyxeA"
+              href="https://www.google.com/maps/search/?api=1&query=Seva%20Sai%20Nursing%20Bureau"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,7 +47,7 @@ const Footer = () => {
 
           <span className="footer-map-icon">
             <a
-              href="https://maps.app.goo.gl/swJs4dpcT5dxV2ry8"
+              href="https://www.google.com/maps/search/?api=1&query=Seva%20Sai%20Nursing%20Bureau"
               target="_blank"
               rel="noopener noreferrer"
               className="map-button"
